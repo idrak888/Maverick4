@@ -1,0 +1,26 @@
+.Layout {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--primary-dark);
+    padding: 20px;
+    height: 100%;
+    color: white;
+  }
+  .Layout .wrapper {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+  }
+  .mb-3 {
+    font-size: 18px;
+    border-radius: 8px;
+    background-color: #0F2151;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .mb-3 .nav-link {
+    color: white;
+  }
+  .mb-3 .nav-link:hover {
+    color: white;
+  }

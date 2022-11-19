@@ -1,0 +1,12 @@
+.Matrix .dimensions {
+    font-size: 24px;
+    margin: 20px 5px;
+}
+.Matrix input {
+    color: white;
+    font-size: 18px;
+    border: 1px solid white;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 6px;
+}

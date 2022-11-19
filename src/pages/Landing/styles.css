@@ -1,0 +1,7 @@
+.Landing {
+    background-color: var(--primary-dark);
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    padding-top: 100px;
+}
