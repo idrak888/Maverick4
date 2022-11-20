@@ -9,20 +9,20 @@ export default () => {
   const [outputString, setOutputString] = useState("");
 
   const calculate = () => {
+    var final = "";
     if (view == "derivative") {
-      var eqn = stringInput;
-      for (let i=0;i<eqn.length;i++) {
-        if (eqn[i] == "x") {
-          if (eqn[i + 1] == "^") {
-            var power = parseInt(eqn[i + 2]);
-            eqn = eqn.substring(0, i - 1) + parseInt(i) * power + eqn.substring(i + "".length);
-          } else {
-            eqn = eqn.substring(0, i) + "" + eqn.substring(i + "".length);
-          }
+      var terms = stringInput.split("+");
+      for (let i=0;i<terms.length;i++) {
+        if (terms[i].includes("^")) {
+          var deg = terms[i][terms[i].length - 1]
+          final += deg + "x^" + (deg - 1)
+        } else if (terms[i].includes("x")) {
+          final += " + " + terms[i].replace("x", "");
         }
       }
-      console.log(eqn);
     }
+    setOutputString("F'(x) = " + final);
+    setOutput(true);
   }  
 
   return (
@@ -43,7 +43,7 @@ export default () => {
       
       {output ? <div>
         <h4>Output</h4>
-        <div>{outputString}</div>
+        <div style={{fontSize: 24, margin: 5}}>{outputString}</div>
       </div> : null}
     </div>
   );

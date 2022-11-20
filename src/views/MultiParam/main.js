@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./styles.css";
 import Button from 'react-bootstrap/Button';
 
+import { compute } from '../../functions/quadratic';
+
 export default () => {
   const [stringInput, setStringInput] = useState("");
   const [output, setOutput] = useState(false);
@@ -44,7 +46,30 @@ export default () => {
       setOutput(true);
       setOutputString(ans.toFixed(2));
     }
-    
+    if (stringInput.includes("x^2")) {
+      var a;
+      var b;
+      var c;
+
+      for (let i=0;i<stringInput.length;i++) {
+        if (stringInput[i] == "x") {
+          if (stringInput[i + 1] == "^") {
+            if (stringInput[i - 1]) {
+              a = stringInput[i - 1];
+            } else {
+              a = 1;
+            }
+          } else {
+            b = stringInput[i - 1];
+          }
+        } else if (stringInput[i] != "x" && stringInput[i + 1] != "x") {
+          c = stringInput[i]
+        }
+      }
+      var roots = compute(a, b, c);
+      setOutputString(`Roots are ${roots[0]} and ${roots[1]}`);
+      setOutput(true);
+    }
   }
 
   return (

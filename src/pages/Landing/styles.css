@@ -1,4 +1,7 @@
 .Landing {
+    background-image: url("../../assets/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
     background-color: var(--primary-dark);
     color: white;
     height: 100vh;
@@ -6,4 +9,5 @@
     padding-top: 100px;
     font-size: large;
     font-family: 'Open Sans';
+    font-weight: bold;
 }

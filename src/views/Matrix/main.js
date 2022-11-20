@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import "./styles.css";
 
+import GridGenerator from "../../components/GridGenerator";
+
 export default () => {
   const [rows, setRows] = useState("");
   const [columns, setColumns] = useState("");
@@ -15,7 +17,7 @@ export default () => {
         rows != "" && columns != "" && rows > 0 && columns > 0 ? 
         <div>
           <h4>Enter values for <i>Matrix 1</i></h4>
-          
+          <GridGenerator rows={rows} cols={columns}/>
         </div>
         : null
       }
