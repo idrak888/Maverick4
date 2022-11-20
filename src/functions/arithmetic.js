@@ -33,49 +33,42 @@ export function compute(stringInput) {
         stringInput = stringInput.replaceAll("e", Math.E);
     }
 
-    if (stringInput.includes("i")) {
-        stringInput = stringInput.replaceAll("i", Math.sqrt(1));
-    }
-
-    console.log(stringInput);
-    stringInput = stringInput.replace("s1", "si");
-
     if (stringInput.includes("log") || stringInput.includes("sqrt") || stringInput.includes("!") || stringInput.includes("sin") || stringInput.includes("cos") || stringInput.includes("tan") || stringInput.includes("cot") || stringInput.includes("sec") || stringInput.includes("csc")) {
         if (stringInput.includes("log")) {
-            var num = parseInt(stringInput.slice(stringInput.indexOf("(") + 1, stringInput.indexOf(")")))
+            var num = parseFloat(stringInput.slice(stringInput.indexOf("(") + 1, stringInput.indexOf(")")))
             return Math.log2(num);
         }
         if (stringInput.includes("sqrt")) {
-            var num = parseInt(stringInput.slice(stringInput.indexOf("(") + 1, stringInput.indexOf(")")))
+            var num = parseFloat(stringInput.slice(stringInput.indexOf("(") + 1, stringInput.indexOf(")")))
             return Math.sqrt(num);
         }
         if (stringInput.includes("!")) {
-            var num = parseInt(stringInput.slice(stringInput.indexOf("(") + 1, stringInput.indexOf(")")))
+            var num = parseFloat(stringInput.slice(stringInput.indexOf("(") + 1, stringInput.indexOf(")")))
             return factorialize(num);
         }
         if (stringInput.includes("sin")) {
-            var num = parseInt(stringInput.slice(stringInput.indexOf("(") + 1, stringInput.indexOf(")")))
-            return Math.round(Math.sin(num));
+            var num = parseFloat(stringInput.slice(stringInput.indexOf("(") + 1, stringInput.indexOf(")")))
+            return Math.sin(num).toFixed(2);
         }
         if (stringInput.includes("cos")) {
-            var num = parseInt(stringInput.slice(stringInput.indexOf("(") + 1, stringInput.indexOf(")")))
-            return Math.round(Math.cos(num));
+            var num = parseFloat(stringInput.slice(stringInput.indexOf("(") + 1, stringInput.indexOf(")")))
+            return Math.cos(num).toFixed(2);
         }
         if (stringInput.includes("tan")) {
-            var num = parseInt(stringInput.slice(stringInput.indexOf("(") + 1, stringInput.indexOf(")")))
-            return Math.round(Math.tan(num));
+            var num = parseFloat(stringInput.slice(stringInput.indexOf("(") + 1, stringInput.indexOf(")")))
+            return Math.tan(num).toFixed(2);
         }
         if (stringInput.includes("sec")) {
-            var num = parseInt(stringInput.slice(stringInput.indexOf("(") + 1, stringInput.indexOf(")")))
-            return 1/Math.cos(num);
+            var num = parseFloat(stringInput.slice(stringInput.indexOf("(") + 1, stringInput.indexOf(")")))
+            return 1/Math.cos(num).toFixed(2);
         }
         if (stringInput.includes("cot")) {
-            var num = parseInt(stringInput.slice(stringInput.indexOf("(") + 1, stringInput.indexOf(")")))
-            return 1/Math.tan(num);
+            var num = parseFloat(stringInput.slice(stringInput.indexOf("(") + 1, stringInput.indexOf(")")))
+            return 1/Math.tan(num).toFixed(2);
         }
         if (stringInput.includes("csc")) {
-            var num = parseInt(stringInput.slice(stringInput.indexOf("(") + 1, stringInput.indexOf(")")))
-            return 1/Math.sin(num);
+            var num = parseFloat(stringInput.slice(stringInput.indexOf("(") + 1, stringInput.indexOf(")")))
+            return 1/Math.sin(num).toFixed(2);
         }
     } else {
         calculatorArray = stringInput.split("");
